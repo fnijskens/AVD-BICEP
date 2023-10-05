@@ -54,7 +54,7 @@ function installOneDrive() {
             $setupExePath = Join-Path -Path $tempFolder -ChildPath 'OneDriveSetup.exe'
             
             Write-Host "AVD AIB Customization OneDrive Apps : Running setup.exe to Install OneDrive"
-            $InstallOneDrive = Start-Process -FilePath $setupExePath -ArgumentList "/allusers" -PassThru -Wait -WorkingDirectory $tempFolder -WindowStyle Hidden
+            $InstallOneDrive = Start-Process -FilePath $setupExePath -ArgumentList "/allusers /silent" -PassThru -Wait -WorkingDirectory $tempFolder -WindowStyle Hidden
 
             if (!$InstallOneDrive) {
                 Throw "AVD AIB Customization OneDrive Apps : Failed to run `"$setupExePath`" to install OneDrive"
