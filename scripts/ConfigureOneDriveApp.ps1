@@ -66,6 +66,7 @@ function installOneDrive() {
              
             Write-Host "AVD AIB Customization OneDrive Apps : Setup Registry key, post install"
             New-ItemProperty  -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Run"  -Name "OneDrive" -Value "C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe /background" -type string -Force
+            New-Item -Path   "HKLM:\SOFTWARE\Policies\Microsoft" -name OneDrive -ItemType Directory
             New-ItemProperty  -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"  -Name "SilentAccountConfig" -Value 1 -type dword -Force
             New-ItemProperty  -Path "HKLM:\SOFTWARE\Policies\Microsoft\OneDrive"  -Name "KFMSilentOptIn" -Value "9b6179a9-c0ce-4b46-89a8-2c455eb9b2ce" -type String -Force
 
@@ -90,4 +91,3 @@ function installOneDrive() {
 }
 
 installOneDrive 
-
