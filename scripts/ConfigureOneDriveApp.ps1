@@ -24,7 +24,7 @@ function installOneDrive() {
 
         $ODDownloadLinkRegex = 'OneDriveSetup.exe'
         $guid = [guid]::NewGuid().Guid
-        $tempFolder = (Join-Path -Path "C:\temp\" -ChildPath $guid)
+        $tempFolder = (Join-Path -Path "C:\" -ChildPath $guid)
         $ODDownloadUrl = 'https://aka.ms/OneDriveWVD-Installer'
 
         if (!(Test-Path -Path $tempFolder)) {
